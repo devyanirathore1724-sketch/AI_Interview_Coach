@@ -30,7 +30,7 @@ if "result" not in st.session_state:
 
 def analyze_resume_with_ai(resume_text):
     message = client.chat.completions.create(
-        model="llama-3.3-70b-versatile",
+        model="openai/gpt-oss-120b",
         max_tokens=1000,
         messages=[
             {
@@ -57,7 +57,7 @@ Resume:
 
 def generate_question(resume_text,history):
     message = client.chat.completions.create(
-        model="llama-3.3-70b-versatile",
+        model="openai/gpt-oss-120b",
         max_tokens=300,
         messages=[
 {
@@ -89,7 +89,7 @@ Based on the resume and previous interview history:
     
 def evaluate_answer(question, answer):
     message = client.chat.completions.create(
-        model="llama-3.3-70b-versatile",
+        model="openai/gpt-oss-120b",
         max_tokens=1000,
         messages=[
             {
